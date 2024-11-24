@@ -1,3 +1,45 @@
 [submodule "pack/airblade/start/vim-gitgutter"]
 	path = pack/airblade/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "pack/dense-analysis/start/ale"]
+	path = pack/dense-analysis/start/ale
+	url = https://github.com/dense-analysis/ale.git
+[submodule "pack/fatih/start/vim-go"]
+	path = pack/fatih/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "pack/junegunn/start/fzf"]
+	path = pack/junegunn/start/fzf
+	url = https://github.com/junegunn/fzf.git
+[submodule "pack/junegunn/start/fzf.vim"]
+	path = pack/junegunn/start/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "pack/hrsh7th/start/nvim-cmp"]
+	path = pack/hrsh7th/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
+[submodule "pack/hrsh7th/start/cmp-nvim-lsp"]
+	path = pack/hrsh7th/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule "pack/L3MON4D3/start/LuaSnip"]
+	path = pack/L3MON4D3/start/LuaSnip
+	url = https://github.com/L3MON4D3/LuaSnip.git
+[submodule "pack/NeogitOrg/start/neogit"]
+	path = pack/NeogitOrg/start/neogit
+	url = https://github.com/NeogitOrg/neogit.git
+[submodule "pack/neovim/start/nvim-lspconfig"]
+	path = pack/neovim/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+[submodule "pack/nvim-lua/start/plenary.nvim"]
+	path = pack/nvim-lua/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "pack/nvim-telescope/start/telescope.nvim"]
+	path = pack/nvim-telescope/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim.git
+[submodule "pack/saadparwaiz1/start/cmp_luasnip"]
+	path = pack/saadparwaiz1/start/cmp_luasnip
+	url = https://github.com/saadparwaiz1/cmp_luasnip.git
+[submodule "pack/Shougo/start/deoplete.nvim"]
+	path = pack/Shougo/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim.git
+[submodule "pack/sindrets/start/diffview.nvim"]
+	path = pack/sindrets/start/diffview.nvim
+	url = https://github.com/sindrets/diffview.nvim.git
