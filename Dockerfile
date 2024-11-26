@@ -16,3 +16,5 @@ RUN echo "${PUBLIC_KEY}" > /root/.ssh/id_rsa.pub
 
 RUN chmod 600 /root/.ssh/id_rsa
 RUN chmod 600 /root/.ssh/id_rsa.pub
+
+WORKDIR /root
