@@ -1,4 +1,5 @@
 -- Extenal tools: ShellCheck shfmt bash-language-server fzf
+-- jedi-language-server (pip)
 -- =========================== --
 -- == SOURCE CONFIGURATIONS == --
 -- =========================== --
@@ -17,10 +18,63 @@ vim.opt.clipboard = 'unnamedplus'   -- use system clipboard
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.mouse = 'a'                 -- allow the mouse to be used in Nvim
 
+
+
+
+local luasnip = require 'luasnip'
+
+
+-- nvim-cmp setup
+local cmp = require 'cmp'
+cmp.setup {
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- Up
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), -- Down
+    -- C-b (back) C-f (forward) for snippet placeholder navigation.
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  }),
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+  },
+}
+
+
 -- LSP 
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require('lspconfig')
+
+-- LSP - Python Language Server
+require'lspconfig'.jedi_language_server.setup{}
+
 
 -- LSP - Bash Language Server
 lspconfig.bashls.setup{}
@@ -53,13 +107,9 @@ lspconfig.lua_ls.setup {
   },
 }
 
-require'cmp'.setup {
-  sources = {
-    { name = 'nvim_lsp' }
-  }
-}
 
-local luasnip = require 'luasnip'
+
+
 
 -- BINDINGS --
 -- Terminal Bindings
