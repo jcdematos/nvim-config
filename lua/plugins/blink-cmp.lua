@@ -35,6 +35,10 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = { documentation = { auto_show = false } },
 
+    enabled = function()
+        return vim.bo.filetype ~= 'markdown'
+    end,
+
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
     },
