@@ -52,8 +52,6 @@ vim.opt.showmode = true
 vim.opt.ignorecase = true           -- ignore case in searches by default
 vim.opt.smartcase = true            -- but make it case sensitive if an uppercase is entered
 
-vim.lsp.enable("pylsp")
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
